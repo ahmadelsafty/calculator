@@ -75,10 +75,6 @@ pipeline {
 	}
 
 	post {
-		always {
-			cleanWs()
-			bat 'docker system prune -f'
-		}
 		success {
 			echo 'Pipeline completed successfully!'
 			echo "Docker Image: ${env.DOCKER_IMAGE}:${env.DOCKER_TAG}"

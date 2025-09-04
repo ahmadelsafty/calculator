@@ -1,0 +1,9 @@
+version: '3.0'
+services:
+  calculator-app:
+    build: .
+    image: ahmadelsafty/simple-calculator:latest
+    container_name: simple-calculator
+
+    restart: unless-stopped
+

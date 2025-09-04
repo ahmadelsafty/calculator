@@ -66,8 +66,8 @@ pipeline {
 		stage('Deploy To Docker') {
 			steps {
 				script {
-					bat 'docker stop simple-calculator || true'
-					bat 'docker rm simple-calculator || true'
+					bat 'docker stop simple-calculator'
+					bat 'docker rm simple-calculator'
 					bat 'docker run -d --name simple-calculator ${env.DOCKER_IMAGE}:${env.DOCKER_TAG}'
 				}
 			}
